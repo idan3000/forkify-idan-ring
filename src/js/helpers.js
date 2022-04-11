@@ -1,5 +1,6 @@
 import { TIMEOUT_SEC } from './config';
 import { async } from 'regenerator-runtime';
+import 'fractional';
 
 export const toFraction = n => new Fraction(n, 1).toString();
 
