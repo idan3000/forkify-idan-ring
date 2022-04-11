@@ -71,7 +71,6 @@ const controlAddRecipe = async newRecipe => {
     addRecipeView.renderSpinner();
     await model.uploadRecipe(newRecipe);
     addRecipeView.renderMassage();
-    console.log(MODAL_CLOSE_SEC);
     setTimeout(() => addRecipeView.toggleWind(), MODAL_CLOSE_SEC);
     window.location.hash = `#${model.state.recipe.id}`;
   } catch (err) {

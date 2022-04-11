@@ -31,7 +31,7 @@ const createRecipeObject = data => {
 export const lodeRecipe = async id => {
   try {
     const data = await AJAX(`${API_URL}/${id}?key=${API_KEY}`);
-    console.log(data.data.recipe);
+
     state.recipe = createRecipeObject(data);
     if (state.bookMarks.some(mark => mark.id === state.recipe.id))
       return (state.recipe.bookMark = true);
@@ -115,7 +115,7 @@ export const uploadRecipe = async newRecipe => {
     };
     const data = await AJAX(`${API_URL}?key=${API_KEY}`, recipe);
     state.recipe = createRecipeObject(data);
-    console.log(state.recipe);
+
     BookMark(state.recipe);
   } catch (err) {
     throw err;
