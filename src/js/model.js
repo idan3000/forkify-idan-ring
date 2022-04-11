@@ -103,7 +103,6 @@ const clearBookMarks = () => {
 export const uploadRecipe = async newRecipe => {
   try {
     const ingredients = await newIngredient(Object.entries(newRecipe));
-    console.log(newRecipe);
     const recipe = {
       title: newRecipe.title,
       source_url: newRecipe.sourceUrl,
